@@ -1,6 +1,8 @@
 const router = express.Router();
+
+const backend_url= "https://tindogbackendservice.onrender.com"
  
-router.post("/register", async(req,res) =>{
+router.post(backend_url+"/register", async(req,res) =>{
     try{
          const password = req.body.password;
          const confirmpassword = req.body.confirmpassword;
@@ -48,7 +50,7 @@ router.post("/register", async(req,res) =>{
  })
 
 
-router.post("/login", async (req, res)=> {
+router.post(backend_url+"/login", async (req, res)=> {
     try{
         const {email, password} = req.body;
 

@@ -64,8 +64,8 @@ app.get("/" , (req,res)=>{
 app.get("/register", (req, res)=>{
     res.render("register");
 })
-
-app.post("/register", async(req,res) =>{
+const backend_url= "https://tindogbackendservice.onrender.com"
+app.post(backend_url+"/register", async(req,res) =>{
     try{
          const password = req.body.password;
          const confirmpassword = req.body.confirmpassword;
@@ -116,7 +116,7 @@ app.post("/register", async(req,res) =>{
     res.render("login");
 })
 
-app.post("/login", async (req, res)=> {
+app.post(backend_url+"/login", async (req, res)=> {
     try{
         const {email, password} = req.body;
 
